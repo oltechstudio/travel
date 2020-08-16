@@ -137,7 +137,7 @@
 						<div class="card card-testimonial text-center">
 							<div class="testimonial-content">
 								<img src="frontend/images/avatar-1.png" alt="user" class="mb-4 rounded-circle">
-								<h3 class="mb-4">Angga Risky</h3>
+								<h3 class="mb-4">Jonathan Orlen</h3>
 								<p class="testimonial">
 									"It was glorius stop say wohoo for every single moment dankee"
 								</p>

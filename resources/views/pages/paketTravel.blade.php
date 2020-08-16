@@ -14,6 +14,15 @@
             background-color: green;
         }
 
+        .card-travel {
+            min-height: 380px;
+            background-color: #000000;
+            color: #fff;
+            padding: 30px;
+            background-size: cover;
+            margin-bottom: 30px;
+        }
+
     </style>
 @endpush
 @section('content')
@@ -47,24 +56,26 @@
         <div id="myProgress">
             <div id="myBar"></div>
         </div>
-        <div class="container container-search" style="margin-top:30px">
-            @foreach($items as $item)
-                <div class="col-sm-6 col-md-4 col-lg-3">
-                    <div class="card-travel text-center d-flex flex-column"
-                        style="background-image: url('{{ $item->galleries->count()?Storage::url($item->galleries->first()->image):'' }}');">
-                        <div class="travel-country">{{ $item->location }}</div>
-                        <div class="travel-location">
-                            {{ $item->title }}
-                        </div>
-                        <div class="travel-button mt-auto">
-                            <a href="{{ route('detail',$item->slug) }}"
-                                class="btn btn-travel-detail px-4">
-                                Views Detail
-                            </a>
+        <div class="container" style="margin-top:30px">
+            <div class="section-popular-travel row justify-content-center container-search">
+                @foreach($items as $item)
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="card-travel text-center d-flex flex-column"
+                            style="background-image: url('{{ $item->galleries->count()?Storage::url($item->galleries->first()->image):'' }}');">
+                            <div class="travel-country">{{ $item->location }}</div>
+                            <div class="travel-location">
+                                {{ $item->title }}
+                            </div>
+                            <div class="travel-button mt-auto">
+                                <a href="{{ route('detail',$item->slug) }}"
+                                    class="btn btn-travel-detail px-4">
+                                    Views Detail
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
     </section>
 </main>
